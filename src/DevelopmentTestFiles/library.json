@@ -1,0 +1,516 @@
+{
+  "content":[
+    {"APO1": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"APO2": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"Estructuras de datos": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"Diseño Web": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"Bases de Datos": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"Diseño de productos": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"Arte": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]},
+    {"Historia de Colombia": [
+      {"languages": [
+        {"en":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"es":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]},
+        {"rus":  [
+          {"1": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"2": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]},
+          {"3": [
+            "video1",
+            "subtitulos1",
+            "video2",
+            "subitulos2"
+          ]}
+        ]}
+      ]}
+    ]}
+  ]
+}

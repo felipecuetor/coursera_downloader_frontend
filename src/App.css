@@ -1,0 +1,50 @@
+header{
+	width:110%;
+	padding:15px;
+	padding-left: 20%;
+	color: #dad2d8;
+	background-color: #3c3c3c;
+}
+
+#mainContent{
+	width:100%;
+	top:25px;
+}
+
+#sidebar{
+	width:100%;
+	top:25px;
+}
+
+.sidebar_button{
+	color: white;
+	background-color: #0f8b8d;
+	width:90%;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.sidebar_button:hover{
+	background-color: #143642;
+}
+
+.clickable{
+	color:black;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	 -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+					user-select: none; /* Non-prefixed version, currently
+																supported by Chrome and Opera */
+}
+
+.clickable:hover{
+	color:gray;
+}
+
+.clickable:active{
+	color:darkGray;
+}
