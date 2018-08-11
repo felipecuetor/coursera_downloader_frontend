@@ -33,28 +33,46 @@ class App extends Component {
   }
 
   render() {
-    return (<div>
+    return (<div id="complete_container">
       <header>
-          <h1>Cursera Downloader</h1>
+          <h1 id="app_title">Cursera Downloader</h1>
       </header>
-      <div className="container">
-        <div className="row">
-        <span id="sidebar" className="col-md-3">
-          <button className="sidebar_button" onClick={() => this.setContent(1)}>Destacados</button>
-          <br/>
-          <button className="sidebar_button" onClick={() => this.setContent(2)}>Librería</button>
-          <br/>
-          <button className="sidebar_button" onClick={() => this.setContent(3)}>Decargar</button>
-          <br/>
-          <button className="sidebar_button" onClick={() => this.setContent(4)}>Tutorial</button>
-        </span>
+      <div className="container auto_height" id="app_container">
+        <div className="row auto_height" style={{margin:'0px'}}>
+        <div id="app_sidebar" className="col-md-3">
+          <button className="app_sidebar_button" onClick={() => this.setContent(1)}>
+            <span className="glyphicon glyphicon-home"></span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Destacados</span>
+          </button>
 
-        <span id="mainContent" className="col-md-9">
+          <button className="app_sidebar_button" onClick={() => this.setContent(2)}>
+            <span className="glyphicon glyphicon-time"></span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Por Revisar</span>
+          </button>
+
+          <button className="app_sidebar_button" onClick={() => this.setContent(3)}>
+            <span className="glyphicon glyphicon-ok"></span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Revisados</span>
+          </button>
+
+          <button className="app_sidebar_button" onClick={() => this.setContent(4)}>
+            <span className="glyphicon glyphicon-download-alt"></span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Decargar</span>
+          </button>
+
+          <button className="app_sidebar_button" onClick={() => this.setContent(5)}>
+            <span className="glyphicon glyphicon-book"></span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Tutorial</span>
+          </button>
+        </div>
+
+        <div id="app_main_content" className="col-md-9 auto_height">
           {this.state.contentID==1 ? <Home data={this.state.contentData}></Home> : <span></span>}
-          {this.state.contentID==2 ? <Library data={this.state.contentData}></Library> : <span></span>}
-          {this.state.contentID==3 ? <Download></Download> : <span></span>}
-          {this.state.contentID==4 ? <Tutorial></Tutorial> : <span></span>}
-        </span>
+          {this.state.contentID==2 ? <span>Por revisar &nbsp; <Library root={true} data={this.state.contentData}></Library></span> : <span></span>}
+          {this.state.contentID==3 ? <Library data={this.state.contentData}></Library> : <span></span>}
+          {this.state.contentID==4 ? <Download></Download> : <span></span>}
+          {this.state.contentID==5 ? <Tutorial></Tutorial> : <span></span>}
+        </div>
       </div>
       </div>
     </div>);

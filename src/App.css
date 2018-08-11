@@ -1,36 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header{
-	width:110%;
-	padding:15px;
-	padding-left: 20%;
+	width:100%;
+	height:11vh;
+	padding-left: 0vw;
 	color: #dad2d8;
 	background-color: #3c3c3c;
+	white-space:nowrap;
 }
 
-#mainContent{
-	width:100%;
-	top:25px;
-}
-
-#sidebar{
-	width:100%;
-	top:25px;
-}
-
-.sidebar_button{
-	color: white;
-	background-color: #0f8b8d;
-	width:90%;
-	border-radius: 5px;
-	padding: 5px;
-	margin-bottom: 10px;
+body{
 	overflow: hidden;
 }
 
-.sidebar_button:hover{
+#app_title{
+	font-size: 5vh;
+	padding:3vh;
+	margin:0px;
+}
+
+#app_main_content{
+	width:100%;
+	overflow: scroll;
+}
+
+#app_sidebar{
+	width:100%;
+	padding: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	border-bottom: 0px;
+}
+
+#app_container{
+		top:3vh;
+		padding:0px;
+}
+
+#complete_container{
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	position: absolute;
+}
+
+.app_sidebar_button{
+	color: white;
+	background-color: #0f8b8d;
+	padding:10px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.app_sidebar_button:hover{
 	background-color: #143642;
 }
 
 .clickable{
+	text-decoration: underline;
 	color:black;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
@@ -41,10 +72,97 @@ header{
 																supported by Chrome and Opera */
 }
 
+.auto_height{
+	height:100%;
+	width:100%;
+}
+
 .clickable:hover{
 	color:gray;
+	cursor: pointer;
 }
 
 .clickable:active{
 	color:darkGray;
+}
+
+.directory{
+	border-style: solid;
+	border-width: thin;
+	border-color: #dad2d8;
+	border-radius: 5px;
+	padding : 5px;
+	margin-bottom: 5px;
+
+}
+
+.parent_directory{
+	width:75%;
+}
+
+.directory_menu{
+	text-align: right;
+}
+
+.round_button{
+	border-radius: 10px;
+	border-style: solid;
+	border-width: thin;
+	border-color:gray;
+}
+
+.round_button:hover{
+	background-color:gray;
+	cursor: pointer;
+}
+
+.round_button:active{
+	background-color: darkGray;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+@media (max-width:768px) {
+	.app_sidebar_button{
+		width:20%;
+	}
+	.app_sidebar_button_text{
+		display:none;
+	}
+
+	header{
+		padding-left: 0vw;
+	}
+	#app_sidebar{
+		text-align:center;
+	}
+	#app_main_content{
+		padding-top: 5px;
+		height:75vh;
+	}
+}
+
+@media (min-width:768px) {
+	.app_sidebar_button{
+		width:100%;
+		margin-bottom: 10px;
+	}
+	.app_sidebar_button_text{
+		display:inline;
+	}
+	header{
+		padding-left: 20vw;
+	}
+	#app_main_content{
+		padding-top: 20px;
+	}
+	#app_sidebar{
+		padding-top: 20px;
+	}
+	#app_main_content{
+		padding-top: 5px;
+		height:88vh;
+	}
 }
