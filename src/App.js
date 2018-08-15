@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (<div id="complete_container">
       <header>
-          <h1 id="app_title">Cursera Downloader</h1>
+          <h1 id="app_title">Coursera Downloader</h1>
       </header>
       <div className="container auto_height" id="app_container">
         <div className="row auto_height" style={{margin:'0px'}}>
