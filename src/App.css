@@ -124,6 +124,26 @@ body{
 	font-weight: bold;
 }
 
+.float_cube{
+  float: left;
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  display:inline-block;
+  overflow: hidden;
+  padding: 5px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: thin;
+  border-top-width: thick;
+
+}
+
+p.float_cube{
+  display:inline-block;
+  overflow: hidden;
+}
+
 @media (max-width:768px) {
 	.app_sidebar_button{
 		width:20%;

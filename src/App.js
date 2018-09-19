@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
 import Home from './Home/Home.js';
-import Library from './Library/Library.js';
+import LibraryContainer from './LibraryContainer/LibraryContainer.js';
 import Download from './Download/Download.js';
 import Tutorial from './Tutorial/Tutorial.js';
+import Courses from './Courses/Courses.js';
 import featured from './DevelopmentTestFiles/featured.json';
 import library from './DevelopmentTestFiles/library.json';
+import Loading from './Loading/Loading.js';
 
 class App extends Component {
   constructor(props) {
@@ -15,21 +17,41 @@ class App extends Component {
       contentData:featured
     };
     this.setContent = this.setContent.bind(this);
+    this.changeSelection = this.changeSelection.bind(this);
+  }
+
+  componentWillMount() {
   }
 
   setContent(currentContent){
     var currentContentData={};
     if(currentContent==1){
       currentContentData=featured;
+      //currentContentData=this.state.featured;
     }
     if(currentContent==2){
-      currentContentData=library;
+      currentContentData=featured;
+      //currentContentData=this.state.pending;
+    }
+    if(currentContent==3){
+      currentContentData=featured;
+      //currentContentData=this.state.ready;
+    }
+    if(currentContent==4){
+      currentContentData=this.state.directory_tree_json;
     }
     this.setState({
       contentID:currentContent,
       contentData:currentContentData
     });
 
+  }
+
+  changeSelection(currentContent) {
+    this.setState({
+      contentID: 6
+    } );
+    setTimeout( function(){this.setContent(currentContent);}.bind(this), 100);
   }
 
   render() {
@@ -40,38 +62,39 @@ class App extends Component {
       <div className="container auto_height" id="app_container">
         <div className="row auto_height" style={{margin:'0px'}}>
         <div id="app_sidebar" className="col-md-3">
-          <button className="app_sidebar_button" onClick={() => this.setContent(1)}>
+          <button className="app_sidebar_button" onClick={() => this.changeSelection(1)}>
             <span className="glyphicon glyphicon-home"></span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Destacados</span>
           </button>
 
-          <button className="app_sidebar_button" onClick={() => this.setContent(2)}>
-            <span className="glyphicon glyphicon-time"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; Por Revisar</span>
-          </button>
-
-          <button className="app_sidebar_button" onClick={() => this.setContent(3)}>
+          <button className="app_sidebar_button" onClick={() => this.changeSelection(2)}>
             <span className="glyphicon glyphicon-ok"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; Revisados</span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Cursos</span>
           </button>
 
-          <button className="app_sidebar_button" onClick={() => this.setContent(4)}>
+          <button className="app_sidebar_button" onClick={() => this.changeSelection(3)}>
+            <span className="glyphicon glyphicon-file"></span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Archivos</span>
+          </button>
+
+          <button className="app_sidebar_button" onClick={() => this.changeSelection(4)}>
             <span className="glyphicon glyphicon-download-alt"></span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Decargar</span>
           </button>
 
-          <button className="app_sidebar_button" onClick={() => this.setContent(5)}>
+          <button className="app_sidebar_button" onClick={() => this.changeSelection(5)}>
             <span className="glyphicon glyphicon-book"></span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Tutorial</span>
           </button>
         </div>
 
         <div id="app_main_content" className="col-md-9 auto_height">
-          {this.state.contentID==1 ? <Home data={this.state.contentData}></Home> : <span></span>}
-          {this.state.contentID==2 ? <span>Por revisar &nbsp; <Library root={true} data={this.state.contentData}></Library></span> : <span></span>}
-          {this.state.contentID==3 ? <Library data={this.state.contentData}></Library> : <span></span>}
-          {this.state.contentID==4 ? <Download></Download> : <span></span>}
-          {this.state.contentID==5 ? <Tutorial></Tutorial> : <span></span>}
+          {this.state.contentID==1 && <Home data={this.state.contentData}></Home>}
+          {this.state.contentID==2 && <Courses></Courses>}
+          {this.state.contentID==3 && <LibraryContainer></LibraryContainer>}
+          {this.state.contentID==4 && <Download></Download>}
+          {this.state.contentID==5 && <Tutorial></Tutorial>}
+          {this.state.contentID==6 && <Loading></Loading>}
         </div>
       </div>
       </div>

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 
-class Home extends Component {
+class Loading extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (<div>
-      En Desarrollo...
+      Loading...
     </div>);
   }
 }
 
-export default Home;
+export default Loading;

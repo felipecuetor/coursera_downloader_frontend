@@ -1,0 +1,16 @@
+.detail_view{
+  position: absolute;
+  z-index: 5;
+  top:0px;
+  down:0px;
+  right:0px;
+  left:0px;
+  background-color: white;
+}
+
+.detail_view_exit_button{
+  position: absolute;
+  z-index: 10;
+  top:5px;
+  right: 5px;
+}
