@@ -8,6 +8,19 @@ class Download extends Component {
   }
 
   downloadCourse(){
+    var cookieValue = null;
+    var name = 'csrftoken';
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
 
     var course_name = document.getElementById('course_name').value
     var username = document.getElementById('username').value
@@ -17,15 +30,16 @@ class Download extends Component {
       password:password,
       course_name:course_name
     }
-    var url = "http://172.24.98.22/development/download_course/"
+    var url = "http://172.24.98.22/development/course_x_tag/"
     var path = "/development/download_course/"
-    var method =  "post"; // Set method to post by default if not specified.
+    var method =  "post";
 
     // The rest of this code assumes you are not using a library.
     // It can be made less wordy if you use one.
     var form = document.createElement("form");
     form.setAttribute("method", method);
-    form.setAttribute("action", url);
+    form.setAttribute("action", path);
+    form.setAttribute("target", "post_frame");
 
     for(var key in params) {
         if(params.hasOwnProperty(key)) {
@@ -37,9 +51,15 @@ class Download extends Component {
             form.appendChild(hiddenField);
         }
     }
+    var hiddenField1 = document.createElement("input");
+    hiddenField1.setAttribute("type", "hidden");
+    hiddenField1.setAttribute("name", 'csrfmiddlewaretoken');
+    hiddenField1.setAttribute("value", cookieValue);
+    form.appendChild(hiddenField1);
 
     document.body.appendChild(form);
     form.submit();
+
   }
 
   render() {
@@ -64,6 +84,7 @@ class Download extends Component {
         <br/>
         <button className="downloadSeperator" onClick={this.downloadCourse}>Add</button>
     </div>
+    <iframe name="post_frame" style="display:hidden"></iframe>
     </div>);
   }
 }

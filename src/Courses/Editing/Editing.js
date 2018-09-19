@@ -64,11 +64,12 @@ class Editing extends Component {
 
     var tag_id = document.getElementById("selected_tag").value
     var params = {
-      username:"http://172.24.98.22/development/courses/"+this.props.course.id,
-      password:"http://172.24.98.22/development/tags/"+tag_id
+      course_id:this.props.course.id,
+      tag_id:tag_id
     }
+    console.log(params)
     var url = "http://172.24.98.22/development/course_x_tag/"
-    var path = "/course_x_tag/"
+    var path = "/development/course_x_tag/"
     var method =  "post"; // Set method to post by default if not specified.
 
     // The rest of this code assumes you are not using a library.
@@ -76,6 +77,7 @@ class Editing extends Component {
     var form = document.createElement("form");
     form.setAttribute("method", method);
     form.setAttribute("action", path);
+    form.setAttribute("target", "post_frame");
 
     for(var key in params) {
         if(params.hasOwnProperty(key)) {
@@ -148,6 +150,8 @@ class Editing extends Component {
         </select>
         <button onClick={()=>this.addCourseXTag()}>agregar</button>
       </div>
+
+      <iframe name="post_frame" style="display:hidden"></iframe>
 
     </div>);
   }
