@@ -30,7 +30,6 @@ class Download extends Component {
       password:password,
       course_name:course_name
     }
-    var url = "http://172.24.98.22/development/course_x_tag/"
     var path = "/development/download_course/"
     var method =  "post";
 
@@ -84,7 +83,7 @@ class Download extends Component {
         <br/>
         <button className="downloadSeperator" onClick={this.downloadCourse}>Add</button>
     </div>
-    <iframe name="post_frame" style="display:hidden"></iframe>
+    <iframe name="post_frame" style={{display:"none"}}></iframe>
     </div>);
   }
 }

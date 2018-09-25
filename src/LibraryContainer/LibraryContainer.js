@@ -17,7 +17,7 @@ class LibraryContainer extends Component {
 
   getDirectoryTree()
   {
-    var url = "http://172.24.98.22/development/directory_tree/"
+    var url = "/development/directory_tree/"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );

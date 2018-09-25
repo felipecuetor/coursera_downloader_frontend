@@ -28,10 +28,12 @@ class Courses extends Component {
 
   getCourses()
   {
-    var url = "http://172.24.98.22/development/courses/"
+    var url = "/development/courses/"
+    console.log(url)
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
+    console.log(xmlHttp.responseText);
     var courses = JSON.parse(xmlHttp.responseText);
     return courses
   }
