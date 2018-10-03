@@ -186,7 +186,7 @@ class Editing extends Component {
         {this.state.course_tags.map((course_tag) =>
           <tr>
             <td>{course_tag.tag_name}</td>
-            <td><button onClick={()=>this.deleteCourseTag(course_tag.id)}>Eliminar</button></td>
+            <td><button className="fill_width" onClick={()=>this.deleteCourseTag(course_tag.id)}> Eliminar </button></td>
           </tr>
         )}
 

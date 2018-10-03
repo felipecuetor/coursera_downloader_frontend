@@ -9,3 +9,7 @@ button{
 select{
   width:50%;
 }
+
+.fill_width{
+  width:100%;
+}
