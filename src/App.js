@@ -64,22 +64,22 @@ class App extends Component {
         <div id="app_sidebar" className="col-md-3">
           <button className="app_sidebar_button" onClick={() => this.changeSelection(1)}>
             <span className="glyphicon glyphicon-home"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; Destacados</span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Home</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(2)}>
             <span className="glyphicon glyphicon-ok"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; Cursos</span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Courses</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(3)}>
             <span className="glyphicon glyphicon-file"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; Archivos</span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; All Files</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(4)}>
             <span className="glyphicon glyphicon-download-alt"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; Decargar</span>
+            <span className="app_sidebar_button_text">&nbsp; &nbsp; Download</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(5)}>

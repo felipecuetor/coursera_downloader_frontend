@@ -1,0 +1,17 @@
+.lesson_position{
+  width:60px;
+}
+.move_postion_button{
+  width:auto;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.lesson_tag{
+  margin:2px;
+  padding:2px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  border-radius: 10px;
+}

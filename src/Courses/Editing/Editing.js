@@ -160,7 +160,7 @@ class Editing extends Component {
         </tr>
       </table>
       <br/>
-      <h3>Exportar subtitulos:</h3>
+      <h3>Export subtitles:</h3>
       <div>
         <select id="language">
 
@@ -169,28 +169,6 @@ class Editing extends Component {
           )}
         </select>
         <button onClick={()=>this.getFilesOfLanguages()}>Descargar</button>
-      </div>
-      <h3>Manejar Tags</h3>
-      <div>
-
-        <select id="selected_tag">
-          {this.state.tags.map((tag) =>
-            <option value={tag.id}>{tag.tag_name}</option>
-          )}
-
-        </select>
-        <button onClick={()=>this.addCourseXTag()}>agregar</button>
-
-        <table>
-
-        {this.state.course_tags.map((course_tag) =>
-          <tr>
-            <td>{course_tag.tag_name}</td>
-            <td><button className="fill_width" onClick={()=>this.deleteCourseTag(course_tag.id)}> Eliminar </button></td>
-          </tr>
-        )}
-
-        </table>
       </div>
 
       <iframe name="post_frame" style={{display:"none"}}></iframe>
