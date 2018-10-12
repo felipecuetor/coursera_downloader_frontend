@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import './bootstrap-grid.min.css';
 import Home from './Home/Home.js';
 import LibraryContainer from './LibraryContainer/LibraryContainer.js';
 import Download from './Download/Download.js';
@@ -13,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contentID: 1,
+      contentID: 5,
       contentData:featured
     };
     this.setContent = this.setContent.bind(this);
@@ -57,7 +58,8 @@ class App extends Component {
   render() {
     return (<div id="complete_container">
       <header>
-          <h1 id="app_title">Coursera Downloader</h1>
+          <h1 id="app_title">Coursera Compiler</h1>
+          <img id="uniandes_logo" src={require('./uniandes_logo.png')} />
       </header>
       <div className="container auto_height" id="app_container">
         <div className="row auto_height" style={{margin:'0px'}}>
@@ -70,11 +72,6 @@ class App extends Component {
           <button className="app_sidebar_button" onClick={() => this.changeSelection(2)}>
             <span className="glyphicon glyphicon-ok"></span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Courses</span>
-          </button>
-
-          <button className="app_sidebar_button" onClick={() => this.changeSelection(3)}>
-            <span className="glyphicon glyphicon-file"></span>
-            <span className="app_sidebar_button_text">&nbsp; &nbsp; All Files</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(4)}>
@@ -91,7 +88,7 @@ class App extends Component {
         <div id="app_main_content" className="col-md-9 auto_height">
           {this.state.contentID==1 && <Home data={this.state.contentData}></Home>}
           {this.state.contentID==2 && <Courses></Courses>}
-          {this.state.contentID==3 && <LibraryContainer></LibraryContainer>}
+
           {this.state.contentID==4 && <Download></Download>}
           {this.state.contentID==5 && <Tutorial></Tutorial>}
           {this.state.contentID==6 && <Loading></Loading>}
@@ -103,3 +100,15 @@ class App extends Component {
 }
 
 export default App;
+
+/**
+
+<button className="app_sidebar_button" onClick={() => this.changeSelection(3)}>
+  <span className="glyphicon glyphicon-file"></span>
+  <span className="app_sidebar_button_text">&nbsp; &nbsp; All Files</span>
+</button>
+
+
+{this.state.contentID==3 && <LibraryContainer></LibraryContainer>}
+
+*/

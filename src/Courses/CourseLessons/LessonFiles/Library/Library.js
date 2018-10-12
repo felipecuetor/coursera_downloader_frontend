@@ -121,7 +121,7 @@ class Library extends Component {
       {this.state.has_sublibrary &&
         <span>{this.state.open_sublibrary &&
           <span>{this.state.levelData.map((course, index) =>
-            <div className="subLibrary directory">
+            <div className="subLibrary directory" draggable="true" onDragStart={(event) => this.drag(event)} onDrop={(event) => this.drop(event)} onDragOver={(event) => this.allowDrop(event)}>
               <span className="container parent_directory">
                 <span className="row">
                   <span className="col-sm-6">

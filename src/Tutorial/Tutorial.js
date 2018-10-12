@@ -7,9 +7,11 @@ class Tutorial extends Component {
   render() {
     return (<div>
       <h2>Tutorial</h2>
-      <p>Esta apliación de permite descargar cursos completos de cursera, organizados por tema de la clase.</p>
-      <p>Primero debes hacer una petición para descargar un curso. Para eso debes ir a la seccion de descarga. Allí debes proveer el nombre completo del curso que buscas descargar. Al presionar el botón de descarga el sistema te informara si fue aceptada.</p>
-      <p>Luego para descargar el curso debes ir a la sección -Libreria-. Allí encontraras un listado de todos los cursos disponibles. Podrás seleccionar el lenguaje de suptitulos preferido, o podrás descargar todos los archivos de un curso. También podrás modificar la organización de los archivos si descubres que un archivo se encuentra en el lugar equivocado.</p>
+      <p>This webapp seeks to facilitate the compilation of data downloaded from coursera.</p>
+      <p>In the "Courses" section, you can see a list of all available courses. Those that are red need to be revised, and those that are green have already been organized and appropriately tagged. Here you can view the courses metadata, files, and lessons. You can relocate files and reorganize the lessons. You can also tag the lessons with specific caracteristics.</p>
+      <p>In the "Download" section, you can petition the server to download and analyze a course. It automatically add to the course list.</p>
+      <br/>
+      <p>This app was created in The University of the Andes. For support contact Felipe Cueto at <a href="f.cueto10@uniandes.edu.co">f.cueto10@uniandes.edu.co</a>.</p>
     </div>);
   }
 }

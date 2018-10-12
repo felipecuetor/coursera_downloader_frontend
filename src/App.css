@@ -5,11 +5,23 @@
 
 header{
 	width:100%;
-	height:11vh;
+	height:14vh;
 	padding-left: 0vw;
-	color: #dad2d8;
-	background-color: #3c3c3c;
+	color: #231d1f;
+	background-color: #FDF100;
 	white-space:nowrap;
+  border-bottom-color: #D00000;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+
+#uniandes_logo{
+  right:15px;
+  top:0px;
+  height:14vh;
+  position: absolute;
 }
 
 body{
@@ -29,7 +41,8 @@ body{
 
 #app_sidebar{
 	width:100%;
-	padding: 5px;
+	padding-left: 5px;
+  padding-right: 5px;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 	border-bottom: 0px;
@@ -50,14 +63,14 @@ body{
 
 .app_sidebar_button{
 	color: white;
-	background-color: #0f8b8d;
+	background-color: #3F88C5;
 	padding:10px;
 	border-radius: 5px;
 	overflow: hidden;
 }
 
 .app_sidebar_button:hover{
-	background-color: #143642;
+	background-color: #336FA0;
 }
 
 .clickable{
@@ -77,6 +90,11 @@ body{
 	width:100%;
 }
 
+.child_size{
+  height:auto;
+  width: auto;
+}
+
 .clickable:hover{
 	color:gray;
 	cursor: pointer;
@@ -89,7 +107,7 @@ body{
 .directory{
 	border-style: solid;
 	border-width: thin;
-	border-color: #dad2d8;
+	border-color: #231d1F;
 	border-radius: 5px;
 	padding : 5px;
 	margin-bottom: 5px;
@@ -124,16 +142,31 @@ body{
 	font-weight: bold;
 }
 
-.float_cube{
+.float_cube_revised{
   float: left;
   width: 200px;
-  height: 150px;
+  height: 175px;
   margin: 10px;
   display:inline-block;
   overflow: hidden;
   padding: 5px;
   border-style: solid;
-  border-color: lightgray;
+  border-color: darkgreen;
+  border-width: thin;
+  border-top-width: thick;
+
+}
+
+.float_cube_needs_revision{
+  float: left;
+  width: 200px;
+  height: 175px;
+  margin: 10px;
+  display:inline-block;
+  overflow: hidden;
+  padding: 5px;
+  border-style: solid;
+  border-color: #D00000;
   border-width: thin;
   border-top-width: thick;
 
@@ -146,7 +179,7 @@ p.float_cube{
 
 @media (max-width:768px) {
 	.app_sidebar_button{
-		width:20%;
+		width:25%;
 	}
 	.app_sidebar_button_text{
 		display:none;
@@ -162,6 +195,9 @@ p.float_cube{
 		padding-top: 5px;
 		height:75vh;
 	}
+  #uniandes_logo{
+    display: none;
+  }
 }
 
 @media (min-width:768px) {
@@ -173,16 +209,15 @@ p.float_cube{
 		display:inline;
 	}
 	header{
-		padding-left: 20vw;
+		padding-left: 0vw;
 	}
 	#app_main_content{
-		padding-top: 20px;
+		padding-top: 10px;
 	}
 	#app_sidebar{
-		padding-top: 20px;
+    padding-top: 16px;
 	}
 	#app_main_content{
-		padding-top: 5px;
 		height:88vh;
 	}
 }

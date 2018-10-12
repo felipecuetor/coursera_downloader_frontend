@@ -6,21 +6,19 @@ class Editing extends Component {
     super(props);
     this.state={
       edit:false,
-      element_edit:null
+      element_edit:null,
+      course:this.props.course
     }
     this.getTags = this.getTags.bind(this)
     this.getCourseTags = this.getCourseTags.bind(this)
     this.getAvailableLanguages = this.getAvailableLanguages.bind(this)
     this.deleteCourseTag = this.deleteCourseTag.bind(this)
+    this.toggleRevised = this.toggleRevised.bind(this)
   }
 
   componentWillMount(){
-    var tags = this.getTags();
-    var course_tags = this.getCourseTags();
     var course_langs = this.getAvailableLanguages();
     this.setState({
-      tags:tags,
-      course_tags:course_tags,
       course_langs:course_langs
     })
   }
@@ -36,7 +34,7 @@ class Editing extends Component {
   }
 
   getCourseTags(){
-    var url = "/development/course_tags/?course_id="+this.props.course.id
+    var url = "/development/course_tags/?course_id="+this.state.course.id
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -57,7 +55,7 @@ class Editing extends Component {
   }
 
   getAvailableLanguages(){
-    var url = "/development/course_languages/?course_id="+this.props.course.id
+    var url = "/development/course_languages/?course_id="+this.state.course.id
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -65,9 +63,22 @@ class Editing extends Component {
     return data
   }
 
+  toggleRevised(course_id){
+    var url = "/development/course_toggle_revised/?course_id="+this.state.course.id
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    var data = JSON.parse(xmlHttp.responseText);
+    var new_course = this.state.course
+    new_course["course_revised"] = !new_course["course_revised"];
+    this.setState({
+      course:new_course
+    });
+  }
+
   getFilesOfLanguages(){
     var language = document.getElementById("language").value
-    var url = "/development/course_lang_files/?course_id="+this.props.course.id+"&language="+language
+    var url = "/development/course_lang_files/?course_id="+this.state.course.id+"&language="+language
     window.open(url,'_blank');
   }
 
@@ -89,7 +100,7 @@ class Editing extends Component {
 
       var tag_id = document.getElementById("selected_tag").value
       var params = {
-        course_id_number:this.props.course.id.toString(),
+        course_id_number:this.state.course.id.toString(),
         tag_id_number:tag_id
       }
       console.log(params)
@@ -140,23 +151,23 @@ class Editing extends Component {
       <table>
         <tr>
           <td>id</td>
-          <td>{this.props.course.id}</td>
+          <td>{this.state.course.id}</td>
         </tr>
         <tr>
           <td>course_name</td>
-          <td>{this.props.course.course_name}</td>
+          <td>{this.state.course.course_name}</td>
         </tr>
         <tr>
           <td>course_revised</td>
-          <td>{this.props.course.course_revised ? <span>True</span> : <span>False</span>}</td>
+          <td><button onClick={this.toggleRevised}>{this.state.course.course_revised ? <span>True</span> : <span>False</span>}</button></td>
         </tr>
         <tr>
           <td>course_download_available</td>
-          <td>{this.props.course.course_download_available ? <span>True</span> : <span>False</span>}</td>
+          <td>{this.state.course.course_download_available ? <span>True</span> : <span>False</span>}</td>
         </tr>
         <tr>
           <td>course_error</td>
-          <td>{this.props.course.course_error ? <span>True</span> : <span>False</span>}</td>
+          <td>{this.state.course.course_error ? <span>True</span> : <span>False</span>}</td>
         </tr>
       </table>
       <br/>

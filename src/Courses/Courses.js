@@ -54,7 +54,7 @@ class Courses extends Component {
 
   getCourses()
   {
-    var url = "http://localhost:80/development/courses/"
+    var url = "/development/courses/"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -68,7 +68,7 @@ class Courses extends Component {
         this.state.edit == 0 &&
         <span>
           {this.state.courses.map((course) =>
-            <span className = "float_cube">
+            <span className = {course.course_revised ? "float_cube_revised" : "float_cube_needs_revision"}>
               <p>{course.course_name}</p>
               <p className = "clickable" onClick={() => this.openCourseEditor(course)}>Edit</p>
               <p className = "clickable"  onClick={() => this.openCourseFiles(course)}>Files</p>

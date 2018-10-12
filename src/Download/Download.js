@@ -64,22 +64,22 @@ class Download extends Component {
   render() {
     return (<div>
       <div className="downloadConent">
-        <span className="downloadSeperator">Nombre del Curso:</span>
+        <span className="downloadSeperator">Course Name:</span>
         <br/>
         <input type="text" name="courseURL" id="course_name" className="downloadSeperator"></input>
         <br/>
         <hr/>
-        <span className="downloadSeperator">Usuario:</span>
+        <span className="downloadSeperator">Coursera Username:</span>
         <br/>
         <input type="text" name="username" id="username" className="downloadSeperator"></input>
         <br/>
         <hr/>
-        <span className="downloadSeperator">Contraseña:</span>
+        <span className="downloadSeperator">Coursera Password:</span>
         <br/>
         <input type="password" name="password" id="password" className="downloadSeperator"></input>
         <br/>
         <hr/>
-        <span>Debes haber inscrito el curso utilizando tu cuenta de coursera previamente. El servidor guardará tus credenciales hasta haber completado la descarga del curso. No recomendamos enviar información de acceso por medio de conexiones http.</span>
+        <span>In order to download a course, you have to have enrolled in it using your own acount. We dont recommend sending your personal information using a http connection.</span>
         <br/>
         <button className="downloadSeperator" onClick={this.downloadCourse}>Add</button>
     </div>

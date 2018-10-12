@@ -15,3 +15,25 @@
   border-color: black;
   border-radius: 10px;
 }
+
+.lesson:hover{
+  background-color: lightGray;
+}
+
+.lesson:active{
+  background-color: lightGray;
+}
+.lesson_info{
+  font-weight: bold;
+}
+
+.grab_area{
+  font-size: 300%;
+}
+.grab_area:hover{
+  cursor:grab;
+}
+
+.add_tag_button{
+  border:none;
+}
