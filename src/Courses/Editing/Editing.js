@@ -25,7 +25,7 @@ class Editing extends Component {
 
 
   getTags(){
-    var url = "/development/tags/"
+    var url = window.rest_service_address+"/tags/"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -34,7 +34,7 @@ class Editing extends Component {
   }
 
   getCourseTags(){
-    var url = "/development/course_tags/?course_id="+this.state.course.id
+    var url = window.rest_service_address+"/course_tags/?course_id="+this.state.course.id
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -44,7 +44,7 @@ class Editing extends Component {
   }
 
   deleteCourseTag(tag_id){
-    var url = "/development/course_x_tag/"+tag_id+"/"
+    var url = window.rest_service_address+"/course_x_tag/"+tag_id+"/"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "DELETE", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -55,7 +55,7 @@ class Editing extends Component {
   }
 
   getAvailableLanguages(){
-    var url = "/development/course_languages/?course_id="+this.state.course.id
+    var url = window.rest_service_address+"/course_languages/?course_id="+this.state.course.id
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -64,7 +64,7 @@ class Editing extends Component {
   }
 
   toggleRevised(course_id){
-    var url = "/development/course_toggle_revised/?course_id="+this.state.course.id
+    var url = window.rest_service_address+"/course_toggle_revised/?course_id="+this.state.course.id
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -78,7 +78,7 @@ class Editing extends Component {
 
   getFilesOfLanguages(){
     var language = document.getElementById("language").value
-    var url = "/development/course_lang_files/?course_id="+this.state.course.id+"&language="+language
+    var url = window.rest_service_address+"/course_lang_files/?course_id="+this.state.course.id+"&language="+language
     window.open(url,'_blank');
   }
 
@@ -104,8 +104,8 @@ class Editing extends Component {
         tag_id_number:tag_id
       }
       console.log(params)
-      var url = "/development/course_x_tag/"
-      var path = "/development/course_x_tag/"
+      var url = window.rest_service_address+"/course_x_tag/"
+      var path = window.rest_service_address+"/course_x_tag/"
       var method =  "post"; // Set method to post by default if not specified.
 
       // The rest of this code assumes you are not using a library.

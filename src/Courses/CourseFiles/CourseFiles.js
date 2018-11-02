@@ -17,7 +17,7 @@ class CourseFiles extends Component {
 
   getDirectoryTree()
   {
-    var url = "/development/course_directory_tree/?course_id="+this.props.course.id
+    var url = window.rest_service_address+"/course_directory_tree/?course_id="+this.props.course.id
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );

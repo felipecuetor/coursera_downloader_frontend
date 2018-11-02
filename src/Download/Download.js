@@ -30,7 +30,7 @@ class Download extends Component {
       password:password,
       course_name:course_name
     }
-    var path = "/development/download_course/"
+    var path = window.rest_service_address+"/download_course/"
     var method =  "post";
 
     // The rest of this code assumes you are not using a library.

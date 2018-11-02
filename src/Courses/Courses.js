@@ -54,7 +54,8 @@ class Courses extends Component {
 
   getCourses()
   {
-    var url = "/development/courses/"
+    var url = window.rest_service_address+"/courses/"
+    //console.log(url);
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );

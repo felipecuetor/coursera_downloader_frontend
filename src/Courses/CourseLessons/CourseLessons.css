@@ -15,6 +15,9 @@
   border-color: black;
   border-radius: 10px;
 }
+.lesson_tag_not_confirmed{
+  background-color: gray;
+}
 
 .lesson:hover{
   background-color: lightGray;

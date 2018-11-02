@@ -14,7 +14,7 @@ class MovePopUpInput extends Component {
 
   move_file(){
     var new_file_location = document.getElementById('new_location').value;
-    var url = "/development/file_detail/"+this.state.file_id+"/"
+    var url = window.rest_service_address+"/file_detail/"+this.state.file_id+"/"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "PUT", url, false ); // false for synchronous request
     xmlHttp.send( {"file_course_location":new_file_location} );

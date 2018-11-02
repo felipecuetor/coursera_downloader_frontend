@@ -73,7 +73,7 @@ class Library extends Component {
      } else {
        var item_key = Object.keys(course)[0];
        "{'file_course_location':'"+new_file_location+"'}"
-       var url = "/development/move_file/"+course[item_key]+"?file_course_location="+new_file_location+"";
+       var url = window.rest_service_address+"/move_file/"+course[item_key]+"?file_course_location="+new_file_location+"";
        var xmlHttp = new XMLHttpRequest();
        xmlHttp.open( "GET", url, false ); // false for synchronous request
        xmlHttp.send(null);

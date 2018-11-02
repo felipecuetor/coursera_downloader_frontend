@@ -65,22 +65,22 @@ class App extends Component {
         <div className="row auto_height" style={{margin:'0px'}}>
         <div id="app_sidebar" className="col-md-3">
           <button className="app_sidebar_button" onClick={() => this.changeSelection(1)}>
-            <span className="glyphicon glyphicon-home"></span>
+            <span className="">&#8962;</span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Home</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(2)}>
-            <span className="glyphicon glyphicon-ok"></span>
+            <span className="">&#9745;</span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Courses</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(4)}>
-            <span className="glyphicon glyphicon-download-alt"></span>
+            <span className="">&#8659;</span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Download</span>
           </button>
 
           <button className="app_sidebar_button" onClick={() => this.changeSelection(5)}>
-            <span className="glyphicon glyphicon-book"></span>
+            <span className="">&#10035;</span>
             <span className="app_sidebar_button_text">&nbsp; &nbsp; Tutorial</span>
           </button>
         </div>
