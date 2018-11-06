@@ -78,7 +78,7 @@ class Editing extends Component {
 
   getFilesOfLanguages(){
     var language = document.getElementById("language").value
-    var url = window.rest_service_address+"/course_lang_files/?course_id="+this.state.course.id+"&language="+language
+    var url = window.rest_service_address+"/download_course_language_contents/?course_id="+this.state.course.id+"&language="+language
     window.open(url,'_blank');
   }
 
@@ -174,7 +174,7 @@ class Editing extends Component {
       <h3>Export subtitles:</h3>
       <div>
         <select id="language">
-
+          <option value="all">All</option>
           {this.state.course_langs.map((lang) =>
             <option value={lang.language}>{lang.language}</option>
           )}

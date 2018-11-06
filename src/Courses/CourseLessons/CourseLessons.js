@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './CourseLessons.css';
-import LessonFiles from './LessonFiles/LessonFiles.js';
+import LessonFileList from './LessonFileList.js';
 //import { Dropdown } from 'semantic-ui-react';
 
 class CourseLessons extends Component {
@@ -22,10 +22,39 @@ class CourseLessons extends Component {
     this.initializeTagsToLessons = this.initializeTagsToLessons.bind(this);
     this.connectTagsToSpecificLesson = this.connectTagsToSpecificLesson.bind(this);
     this.updateTagsOfLesson = this.updateTagsOfLesson.bind(this);
+    this.view_lessson_files = this.view_lessson_files.bind(this);
+    this.closeOverlay = this.closeOverlay.bind(this);
+    this.getLessonFiles = this.getLessonFiles.bind(this);
   }
 
   componentWillMount() {
     setTimeout( function(){this.updateInfo();}.bind(this), 100);
+  }
+
+  view_lessson_files(lesson_id){
+    this.setState({
+      overlay:2
+    });
+
+    setTimeout( function(){this.getLessonFiles(lesson_id);}.bind(this), 100);
+  }
+
+  getLessonFiles(lesson_id){
+    var url = window.rest_service_address+"/lesson_files/?lesson_id="+lesson_id
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    var data = JSON.parse(xmlHttp.responseText);
+    this.setState({
+      overlay:1,
+      current_lesson_files:data
+    });
+  }
+
+  closeOverlay(){
+    this.setState({
+      overlay:0
+    });
   }
 
   updateInfo(){
@@ -501,6 +530,9 @@ class CourseLessons extends Component {
                 {" "+lesson.list_position+" - "}
                 {lesson.lesson_name}
               </span>
+              &nbsp;
+              &nbsp;
+              <span className="clickable" onClick={() => this.view_lessson_files(lesson.id)}>view files</span>
               <br/>
               <button className="child_size add_tag_button round_button" onClick={()=>this.updateTagsOfLesson(lesson.id)}>&nbsp; &#8635; &nbsp;</button>
               <select className="child_size" id={"tag-to-add-"+lesson.id}>
@@ -521,9 +553,9 @@ class CourseLessons extends Component {
       </div>
     }
       {this.state.overlay == 1 &&
-        <LessonFiles>
+        <LessonFileList files={this.state.current_lesson_files} close={this.closeOverlay}>
 
-        </LessonFiles>
+        </LessonFileList>
       }
       {this.state.overlay == 2 &&
         <p>
@@ -536,34 +568,3 @@ class CourseLessons extends Component {
 }
 
 export default CourseLessons;
-
-/**
-<select id={"tag-to-add-"+lesson.id}>
-  {this.state.tags.map((tag) =>
-    <option value={tag.id}>{tag.tag_name}</option>
-  )}
-</select>
-<h3>Manejar Tags</h3>
-<div>
-
-  <select id="selected_tag">
-    {this.state.tags.map((tag) =>
-      <option value={tag.id}>{tag.tag_name}</option>
-    )}
-
-  </select>
-  <button onClick={()=>this.addCourseXTag()}>agregar</button>
-
-  <table>
-
-  {this.state.course_tags.map((course_tag) =>
-    <tr>
-      <td>{course_tag.tag_name}</td>
-      <td><button className="fill_width" onClick={()=>this.deleteCourseTag(course_tag.id)}> Eliminar </button></td>
-    </tr>
-  )}
-
-  </table>
-</div>
-
-*/
