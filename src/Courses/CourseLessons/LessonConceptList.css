@@ -1,0 +1,37 @@
+.concept_space{
+  overflow-y:scroll;
+  border-left: solid thin;
+}
+.search_space{
+  overflow-y:scroll;
+}
+.search_input{
+  width:75%;
+}
+
+.search_button{
+  width:25%;
+}
+
+.add_button{
+
+}
+
+
+@media (max-width:768px) {
+  .concept_space{
+    height:60vh;
+  }
+  .search_space{
+    height:60vh;
+  }
+}
+
+@media (min-width:768px) {
+  .concept_space{
+    height:70vh;
+  }
+  .search_space{
+    height:70vh;
+  }
+}

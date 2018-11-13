@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './CourseLessons.css';
 import LessonFileList from './LessonFileList.js';
+import LessonConceptList from './LessonConceptList.js'
 //import { Dropdown } from 'semantic-ui-react';
 
 class CourseLessons extends Component {
@@ -22,7 +23,8 @@ class CourseLessons extends Component {
     this.initializeTagsToLessons = this.initializeTagsToLessons.bind(this);
     this.connectTagsToSpecificLesson = this.connectTagsToSpecificLesson.bind(this);
     this.updateTagsOfLesson = this.updateTagsOfLesson.bind(this);
-    this.view_lessson_files = this.view_lessson_files.bind(this);
+    this.view_lesson_files = this.view_lesson_files.bind(this);
+    this.view_lesson_concepts = this.view_lesson_concepts.bind(this);
     this.closeOverlay = this.closeOverlay.bind(this);
     this.getLessonFiles = this.getLessonFiles.bind(this);
   }
@@ -31,7 +33,7 @@ class CourseLessons extends Component {
     setTimeout( function(){this.updateInfo();}.bind(this), 100);
   }
 
-  view_lessson_files(lesson_id){
+  view_lesson_files(lesson_id){
     this.setState({
       overlay:2
     });
@@ -50,6 +52,27 @@ class CourseLessons extends Component {
       current_lesson_files:data
     });
   }
+  view_lesson_concepts(lesson_id){
+    this.setState({
+      overlay:2
+    });
+
+    setTimeout( function(){this.getLessonConcepts(lesson_id);}.bind(this), 100);
+  }
+  getLessonConcepts(lesson_id){
+    var url = window.rest_service_address+"/lesson_concepts/?lesson_id="+lesson_id
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    console.log(xmlHttp.responseText);
+    var data = JSON.parse(xmlHttp.responseText);
+    this.setState({
+      overlay:3,
+      current_lesson_concepts:data
+    });
+  }
+
+
 
   closeOverlay(){
     this.setState({
@@ -532,7 +555,10 @@ class CourseLessons extends Component {
               </span>
               &nbsp;
               &nbsp;
-              <span className="clickable" onClick={() => this.view_lessson_files(lesson.id)}>view files</span>
+              <span className="clickable" onClick={() => this.view_lesson_files(lesson.id)}>view files</span>
+              &nbsp;
+              &nbsp;
+              <span className="clickable" onClick={() => this.view_lesson_concepts(lesson.id)}>concepts</span>
               <br/>
               <button className="child_size add_tag_button round_button" onClick={()=>this.updateTagsOfLesson(lesson.id)}>&nbsp; &#8635; &nbsp;</button>
               <select className="child_size" id={"tag-to-add-"+lesson.id}>
@@ -546,6 +572,7 @@ class CourseLessons extends Component {
                   <span className={tag.id == -2 ? "lesson_tag lesson_tag_not_confirmed": "lesson_tag"}>{tag.tag_name}<span className="clickable" onClick={()=>this.deleteLessonTag(tag.id, lesson.id)}>&#9746;</span></span>
               )}
             </span>
+            <br />
           </div>
           <hr/>
         </div>
@@ -562,7 +589,11 @@ class CourseLessons extends Component {
           Loading...
         </p>
       }
-      <iframe name="post_frame" style={{display:"none"}}></iframe>
+      {this.state.overlay == 3 &&
+        <LessonConceptList concepts={this.state.current_lesson_concepts} close={this.closeOverlay}>
+
+        </LessonConceptList>
+      }
     </div>);
   }
 }

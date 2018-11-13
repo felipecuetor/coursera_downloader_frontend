@@ -33,6 +33,61 @@
       var rest_service_address = "http://localhost:8080"
       //var rest_service_address = "/development"
 
+      var concept_service = "http://localhost:9000/concepts/sparql"
+      //var concept_service = "/concepts/sparql"
+
+      function simpleDjangoPost(url, params){
+        //Get Django cookie
+        var cookieValue = null;
+        var name = 'csrftoken';
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        var method =  "post";
+        // Set method to post by default if not specified.
+
+        // The rest of this code assumes you are not using a library.
+        // It can be made less wordy if you use one.
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", url);
+        form.setAttribute("target", "post_frame");
+
+        for(var key in params) {
+            if(params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+                form.appendChild(hiddenField);
+            }
+        }
+        var hiddenField1 = document.createElement("input");
+        hiddenField1.setAttribute("type", "hidden");
+        hiddenField1.setAttribute("name", 'csrfmiddlewaretoken');
+        hiddenField1.setAttribute("value", cookieValue);
+        form.appendChild(hiddenField1);
+
+        document.body.appendChild(form);
+        form.submit();
+      }
+
+      function simpleGet(url){
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", url, false ); // false for synchronous request
+        xmlHttp.send( null );
+        console.log(xmlHttp.responseText);
+        var data = JSON.parse(xmlHttp.responseText);
+        return data;
+      }
     </script>
     <div id="root"></div>
     <!--
@@ -45,5 +100,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <iframe name="post_frame" style="display:none;"></iframe>
   </body>
 </html>
