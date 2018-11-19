@@ -68,7 +68,8 @@ class CourseLessons extends Component {
     var data = JSON.parse(xmlHttp.responseText);
     this.setState({
       overlay:3,
-      current_lesson_concepts:data
+      current_lesson_concepts:data,
+      current_lesson_concept_viewing:lesson_id
     });
   }
 
@@ -590,7 +591,7 @@ class CourseLessons extends Component {
         </p>
       }
       {this.state.overlay == 3 &&
-        <LessonConceptList concepts={this.state.current_lesson_concepts} close={this.closeOverlay}>
+        <LessonConceptList lesson_id={this.state.current_lesson_concept_viewing} concepts={this.state.current_lesson_concepts} close={this.closeOverlay}>
 
         </LessonConceptList>
       }

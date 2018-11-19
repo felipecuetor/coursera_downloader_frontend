@@ -17,6 +17,12 @@
 
 }
 
+.small_concept_uri{
+  font-size:10px;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
 
 @media (max-width:768px) {
   .concept_space{
